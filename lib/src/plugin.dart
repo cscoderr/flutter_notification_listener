@@ -1,7 +1,6 @@
-import 'dart:convert';
+import 'dart:async';
 import 'dart:isolate';
 import 'dart:ui';
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -165,7 +164,7 @@ class NotificationsListener {
 }
 
 /// callbackDispatcher use to install background channel
-void callbackDispatcher({inited: true}) {
+void callbackDispatcher({bool inited = true}) {
   WidgetsFlutterBinding.ensureInitialized();
 
   NotificationsListener._bgMethodChannel
